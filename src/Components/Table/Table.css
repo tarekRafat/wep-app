@@ -1,0 +1,36 @@
+.table-sec {
+  margin-top: 2rem;
+  padding: 2rem;
+  overflow-y: auto;
+  height: 90vh;
+}
+.table-head {
+  background: #2b2f55;
+}
+.table {
+  color: white;
+}
+td,
+th {
+  border-top: 1px solid #2a2d55 !important;
+  border-bottom: 1px solid #2a2d55 !important;
+}
+.success-btn {
+  width: 65px;
+  height: 20px;
+  background: #63f4f7;
+  font-size: 10px;
+  color: #122f30;
+  border: none;
+}
+.fail-btn {
+  font-weight: bold;
+  font-size: 10px;
+  color: #fe7448;
+  background-color: #fe7448;
+  color: white;
+  border: none;
+  padding: 0rem 1rem;
+
+  /* opacity: 0.2; */
+}

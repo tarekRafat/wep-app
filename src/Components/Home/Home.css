@@ -1,0 +1,24 @@
+.filter {
+  height: 117px;
+  background: #2b2f55;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.filter-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.filter-btns button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #2b2e4b;
+  color: white;
+}
+.active {
+  background: #01a9f4 !important;
+}

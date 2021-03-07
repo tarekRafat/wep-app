@@ -1,0 +1,17 @@
+.cart-container {
+  height: 117px;
+  background: #2b2f55;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-title {
+  display: flex;
+  flex-direction: column;
+}
+.cart-num {
+  color: #63f4f7;
+  font-size: 28px;
+  font-weight: 700;
+}

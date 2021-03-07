@@ -1,0 +1,48 @@
+header {
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.profile_header {
+  width: 22rem;
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-evenly;
+  margin-right: 3rem;
+}
+
+.contact-info {
+  display: flex;
+  width: 15rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notifacation {
+  border: 1px solid #2d325a;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  position: relative;
+}
+.notifacation_icon {
+  color: #6f7291;
+  font-size: 2rem;
+}
+.notifacation:hover .notifacation_icon {
+  color: white;
+}
+.notifacation:hover {
+  cursor: pointer;
+}
+.notifacation_circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #fe7448;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
