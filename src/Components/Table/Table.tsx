@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./Table.css";
 
+//import Types
+import { ProductProp } from "../../Data/products";
+
 interface Props {
-  products: Product[];
-}
-export interface Product {
-  date: string;
-  details: string;
-  size: number;
-  website: string;
-  price: number;
-  status: boolean;
+  products: ProductProp[];
 }
 
 export const Table: React.FC<Props> = ({ products }) => {
-  let [count, setCount] = useState(0);
   let statusBtnHanddle = (status: boolean) => {
     if (status) {
       return ["SUCCESS"];
@@ -39,7 +33,7 @@ export const Table: React.FC<Props> = ({ products }) => {
           {products.map((product, index) => {
             return (
               <tr key={index}>
-                <th scope="row">{product.date}</th>
+                <th scope="row">{`${product.day} ${product.month} ${product.year}`}</th>
                 <td>{product.details}</td>
                 <td>{product.size}</td>
                 <td>{product.website}</td>

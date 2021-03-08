@@ -1,4 +1,9 @@
-export const carts = [
+export interface CartProps {
+  cartTitle: string;
+  cartNum: number;
+  cartPic: string;
+}
+export const carts: CartProps[] = [
   {
     cartTitle: "Total checkouts",
     cartNum: 72,

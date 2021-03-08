@@ -1,0 +1,23 @@
+.noti_popup {
+  width: 320px;
+  height: 347px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #2c3159;
+  border: 1px solid #3d447b;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 16px rgba(20, 22, 41, 0.2);
+  border-radius: 8px;
+  position: absolute;
+  z-index: 3;
+  top: 6rem;
+  overflow-y: auto;
+}
+.noti_msg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}

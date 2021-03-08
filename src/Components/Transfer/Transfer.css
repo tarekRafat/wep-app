@@ -2,7 +2,8 @@
 .licence {
   background: #2b2f55;
   height: 240px;
-  padding-top: 5rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
 }
 .licence_txt {
   font-size: 14px;
@@ -64,15 +65,63 @@
   padding-right: 0.5rem;
 }
 .laptop button {
-  width: 259px;
-  height: 40px;
+  padding: 0.5rem 4rem;
   background: #1ec1c3;
   border: none;
+  font-size: 14px;
 }
 .win-btn {
   margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .andriod_os {
   display: flex;
   flex-direction: column;
+}
+/* Modal  */
+.custom_modal {
+  background: #323662 !important;
+  border-top: 1px solid #2e325c !important;
+  border-bottom: 1px solid #2e325c !important;
+}
+.custom_modal .close {
+  color: white;
+}
+.custom_footer {
+  background: #292d52 !important;
+  border-top: 1px solid #2e325c !important;
+}
+.send-btn {
+  background: #1ec1c3;
+  width: 135px;
+  height: 48px;
+  color: white;
+  border: none;
+}
+.cancel-btn {
+  width: 135px;
+  height: 48px;
+  background: #2e325c;
+  color: white;
+  border: none;
+}
+#emailInput {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #292d52;
+  font-size: 1rem;
+  border: none;
+  color: white;
+}
+#emailInput:focus {
+  border: none;
+  outline: none;
+}
+.modal-content {
+  border: none;
+}
+.error {
+  color: #ec4165;
 }

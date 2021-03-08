@@ -1,20 +1,17 @@
-import { type } from "node:os";
 import React from "react";
 import "./Cart.css";
+
+//import Types
+import { CartProps } from "../../Data/cart";
+
 interface Props {
-  cart: Cart;
+  cart: CartProps;
   numOfStatus: number;
   totalNum: number;
 }
 
-interface Cart {
-  cartTitle: string;
-  cartNum: number;
-  cartPic: string;
-}
-
 export const Cart: React.FC<Props> = ({ cart, numOfStatus, totalNum }) => {
-  const { cartTitle, cartNum, cartPic } = cart;
+  const { cartTitle, cartPic } = cart;
   console.log(numOfStatus);
   return (
     <div className="cart-container col-md-4 col-11 mt-2">
