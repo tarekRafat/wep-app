@@ -29,9 +29,9 @@ export const Notification: React.FC<Props> = ({ notificationEmail }) => {
     <React.Fragment>
       <div className="noti_popup">
         <h5>Notifications</h5>
-        {filterNotification.map(note => {
+        {filterNotification.map((note, index) => {
           return (
-            <div className="noti_msg">
+            <div key={index} className="noti_msg">
               <img src="./svgs/transfer.svg" alt="" />
               <div className="confim_msg">
                 <p className="pl-2">Transfer link confimed by {note.email}</p>

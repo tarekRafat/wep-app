@@ -1,4 +1,5 @@
 import React from "react";
+import { useSpring, animated } from "react-spring";
 import "./Cart.css";
 
 //import Types
@@ -11,14 +12,21 @@ interface Props {
 }
 
 export const Cart: React.FC<Props> = ({ cart, numOfStatus, totalNum }) => {
+  //animate numbers
+  const props = useSpring({
+    number: Math.floor(numOfStatus),
+    from: { number: 0 },
+  });
   const { cartTitle, cartPic } = cart;
-  console.log(numOfStatus);
+
   return (
     <div className="cart-container col-md-4 col-11 mt-2">
       <div className="cart-title">
         <span>{cartTitle}</span>
         <div className="">
-          <span className="cart-num">{numOfStatus} </span>
+          <animated.span className="cart-num">
+            {props.number.interpolate((number: any) => Math.floor(number))}
+          </animated.span>
           <span>/ {totalNum}</span>
         </div>
       </div>

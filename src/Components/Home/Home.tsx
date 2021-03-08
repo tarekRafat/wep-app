@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSpring, animated } from "react-spring";
 import { Cart } from "../Cart/Cart";
 import { Table } from "../Table/Table";
 import { Transfer } from "../Transfer/Transfer";
@@ -78,34 +79,37 @@ function Home() {
     setNumFail(numberOfFail(filteredYear));
     setTotalNum(numberOfFail(filteredYear) + numberOfSucess(filteredYear));
   };
+  //fading in animation
+  const props = useSpring({ marginTop: 160, from: { marginTop: 0 } });
+
   return (
     <React.Fragment>
       <div className="container-fluid pb-4">
         <div className="row">
           <div className="col-lg-8 col-12 table-container">
-            <div className="row justify-content-around">
-              <div className="col-md-2 col-11 mt-2 filter">
-                <span>Filter by</span>
-                <div className="filter-btns">
-                  <button onClick={filterByDay}>1D</button>
-                  <button onClick={filterByMonth}>1M</button>
-                  <button onClick={filterByyear}>1Y</button>
+            <animated.div style={props}>
+              <div className="row justify-content-around">
+                <div className="col-md-2 col-11 mt-2 filter">
+                  <span>Filter by</span>
+                  <div className="filter-btns">
+                    <button onClick={filterByDay}>1D</button>
+                    <button onClick={filterByMonth}>1M</button>
+                    <button onClick={filterByyear}>1Y</button>
+                  </div>
                 </div>
+                <Cart
+                  cart={carts[0]}
+                  numOfStatus={numbSuccess}
+                  totalNum={totalNum}
+                />
+                <Cart
+                  cart={carts[1]}
+                  numOfStatus={numbFail}
+                  totalNum={totalNum}
+                />
               </div>
-              <Cart
-                cart={carts[0]}
-                numOfStatus={numbSuccess}
-                totalNum={totalNum}
-              />
-              <Cart
-                cart={carts[1]}
-                numOfStatus={numbFail}
-                totalNum={totalNum}
-              />
-            </div>
-            <div className="row">
-              <Table products={filter} />
-            </div>
+            </animated.div>
+            <Table products={filter} />
           </div>
           <div className="col-lg-4 col-12">
             <Transfer person={person} />

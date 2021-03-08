@@ -125,3 +125,33 @@
 .error {
   color: #ec4165;
 }
+/* congrates popup  */
+.congrates_modal {
+  background: #2d325a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.congrates_header {
+  background: #2d325a;
+  color: white !important;
+  border-bottom: #2d325a;
+}
+.send_again {
+  margin-top: 2rem;
+}
+.congrates_header img {
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  position: absolute;
+  right: 50%;
+  /* top: 50%; */
+  z-index: 2;
+  transform: translateX(50%);
+}

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./Transfer.css";
+import { useForm } from "react-hook-form";
 import { DiApple } from "react-icons/di";
 import { SiWindows } from "react-icons/si";
 import Modal from "react-bootstrap/Modal";
+import "./Transfer.css";
 
 //import Types
 import { Person } from "../../Data/profileInfo";
-import { useForm } from "react-hook-form";
 import { Header } from "../Header/Header";
 
 interface Props {
@@ -17,13 +17,16 @@ type Inputs = {
 };
 
 export const Transfer: React.FC<Props> = ({ person }) => {
-  const { discordID, license } = person;
+  const [show, setShow] = useState(false);
+  const [congratesPopup, setCongratesPopup] = useState(false);
+  const [notificationEmail, setNotificationEmail] = useState([{ email: "" }]);
+  const [email, setEmail] = useState("");
   //Email Validation
   let { register, handleSubmit, errors } = useForm<Inputs>({
     mode: "onTouched",
   });
-  const [show, setShow] = useState(false);
-  const [notificationEmail, setNotificationEmail] = useState([{ email: "" }]);
+
+  const { discordID, license, mail } = person;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -31,7 +34,10 @@ export const Transfer: React.FC<Props> = ({ person }) => {
   const onSubmit = (data: Inputs) => {
     setNotificationEmail([...notificationEmail, { email: data.email }]);
     handleClose();
+    setEmail(data.email);
+    setCongratesPopup(true);
   };
+
   console.log(notificationEmail);
   return (
     <React.Fragment>
@@ -110,7 +116,26 @@ export const Transfer: React.FC<Props> = ({ person }) => {
           </form>
         </Modal>
       </section>
-
+      <Modal
+        show={congratesPopup}
+        onHide={() => setCongratesPopup(false)}
+        centered
+      >
+        <Modal.Header closeButton className="congrates_header">
+          <img src="./svgs/congrates.svg" alt="congrates_pic" />
+        </Modal.Header>
+        <Modal.Body className="congrates_modal">
+          <h5>Confirmation Email Sent</h5>
+          <span>
+            we sent a link to <a href="#">{email}</a>.Check the email to confirm
+            the transfer.
+          </span>
+          <div className="send_again">
+            <p>Didn't get a confirmation email?</p>
+            <span>Check your spam or Send Again</span>
+          </div>
+        </Modal.Body>
+      </Modal>
       {/* Laptop Section      */}
       <section className="laptop">
         <img src="./svgs/Laptop.svg" alt="dispktop app" />
